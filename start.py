@@ -988,6 +988,319 @@ try:
 	
 	
 	
+	# class Animal (Object):
+    # pass
+    
+# ## ??
+# class Dog (Animal):
+
+    # def __init__ (self, name):
+        # ## ??
+        # self.name = name
+        
+# ## ??
+# class Cat(Animal):
+    
+    # def __init__ (self, name):
+        # ## ??
+        # self.name = name
+        
+# ## ??        
+# class Person(object):
+    # def __init__ (self, name):
+        # ## ??
+        # self.name = name
+        
+        # ## Person has-a pet of some kind
+        # self.pet = None
+        
+# ## ??
+# class Emlpoyee (Person):
+
+    # def __init__(self, name, salary):
+    # ## ?? hmm what is this strange magic?
+        # super (Employee, self).__init__(name)
+    # ##??
+    # self.salary = salary
+    
+# ##??
+# class Fish(object):
+    # pass
+    
+# ## ??
+# class Salmon(Fish):
+    # pass
+    
+# ## ??
+# class Halibut(Fish):
+    # pass
+    
+# ## rover is-a Dog
+# rover = Dog("Rover")
+
+# ## ??
+# satan = Cat("Satan")
+
+# ## ??
+# mary = Person("Mary")
+
+# ## ??
+# pary.pet = satan
+
+# ## ??
+# frank = Employee("Frank", 120000)
+
+# ## ??
+# frank.pet = rover
+
+# ## ??
+# flipper = Fish()
+
+# ## ??
+# cause = Salmon()
+
+# ## ??
+# harry = Halibut()
+
+
+#############################Start Exercise 43###################################
+	
+# from sys import exit
+# from random import randint
+
+# class Scene(object):
+
+    # def enter(self):
+        # print ("This scene is not yet configured. Subcalss it and implement enter()")
+        # exit(1)
+        # # pass
+        
+# class Engine(object):
+
+    # def __init__(self, scene_map):
+        # self.scene_map = scene_map
+        # #pass
+        
+    # def play(self):
+        # current_scene = self.scene_map.opening_scene()
+        
+        # while True:
+        
+            # print ("\n-------")
+            # next_scene_name = current_scene.enter()
+            # current_scene = self.scene_map.next_scene(next_scene_name)
+        
+# class Death(Scene):
+    
+    # quips = [
+        # "You died. You kinda suck at this.",
+        # "Your mom would be proud...if she were samrter.",
+        # "Such a Luser.",
+        # "I have a small puppy that's better at this."
+        # ]
+            
+    # def enter(self):
+        # print (Death.quips[randint(0, len(self.quips)-1)])
+        # exit(1)
+            
+# #Death Scene
+# class CentralCorridor(Scene):
+
+    # def enter(self):
+        # print ("The Gothons of Planet Percal #25 have invaded your ship and Destroyed")
+        # print (" your entire crew. You are the last surviving member and your last")
+        # print (" mission is to get the neutron destruct bomb from the Weapon Armory")
+        # print (" put it in the bridge, and blow the ship up after getting into an ")
+        # print ("escape pod.")
+        # print ("\n")
+        
+        # action = eval(input(">"))
+        
+        # if action == "shoot!":
+            # print ("You died")
+            # return 'death'
+            
+        # elif action == "dodge!":
+            # print ("You still die")
+            # return 'death'
+        
+        # elif action == "tell a joke":
+            # print ("you survive")
+            # return 'central_corridor'
+        
+# class LaserWeaponAromry(Scene):
+    # def enter(self):
+        # print ("You enter armory")
+        # code = "%d%d%d" %(randint(1,9), randint(1,9), randint(1,9))
+        # guess = eval(input("[keypad]>"))
+        # guesses = 0
+        
+        # while guess != code and guesses <10:
+            # print ("Buzzed")
+            # guesses += 1
+            # guess = eval(input("[keypad]>"))
+            
+        # if guess == code:
+            # print ("The container clicks open")
+            # return 'the_bridge'
+        # else:
+            # print ("You die")
+            # return 'death'
+            
+# class TheBridge(Scene):
+
+    # def enter(self):
+        # print ("you encounter aliens")
+        
+        # action = eval(input(">"))
+        
+        # if action == "throw the bomb":
+            # print("you die")
+            # return 'death'
+            
+        # elif action == "slowly place the bomb":
+            # print ("slow good")
+            # return 'escape_pod'
+        # else:
+            # "Does not compute"
+            # return "the_bridge"
+        
+# class EscapePod(Scene):
+    
+    # def enter(self):
+        # print ("choose a pod")
+        
+        # good_pod = rand_int(1,5)
+        # guess = eval(input(">"))
+        
+        # if int(guess) != good_pod:
+            # print("Yu die")
+            # return 'death'
+        
+        # else:
+            # print ("You won")
+            # return 'finished'
+        
+        
+# class Map(object):
+    # scenes = {
+        # 'central_corridor': CentralCorridor(),
+        # 'laser_weapon_armory': LaserWeaponAromry(),
+        # 'the_bridge':TheBridge(),
+        # 'escape_pod':EscapePod(),
+        # 'death':Death()
+        # }
+        
+    # def __init__(self, start_scene):
+        # self.start_scene = start_scene
+            
+    # def next_scene(self):
+        # return Map.scene.get(scene_name)
+            
+    # def opening_scene(self):
+        # return self.next_scene(self.start_scene)
+            
+            
+# a_map = Map('central_corridor')
+# a_game = Engine(a_map)
+# a_game.play()
+    
+       
+##############################End of Exercise 43####################################
+
+############################Remaining part of 42####################################
+        
+        # pass
+    
+# class Death(Scene):
+
+    # def enter(self):
+        # pass
+        
+# class CentralCorridor(Scene):
+
+    # def enter(self):
+        # pass
+    
+# class LaserWeaponAromry(Scene):
+    
+    # def enter(self):
+        # pass
+        
+# class TheBridge(Scene):
+
+    # def enter(self):
+        # pass
+        
+# class EscapePod(Scene):
+
+    # def enter(self):
+        # pass
+        
+# class Map(object):
+    # def __init__(self, start_scene):
+        # pass
+    # def next_scene(self, scnene_name):
+        # pass
+    # def opening_scene(self):
+        # pass
+        
+# a_map = Map('central_corridor')
+# a_game = Engine(a_map)
+# a_game.play()
+
+    
+	
+	#####Exercise 44#######
+    
+# class Parent(object):
+    
+    # def implicit(self):
+        # print ("Parent implicit")
+        
+ class Child(Parent):
+     pass
+    
+ dad = Parent()
+ son = Child()
+
+ dad.implicit()
+ son.implicit()
+
+
+ class Parent(object):
+
+     def override(self):
+         print ("PARENT override()")
+    
+ class Child(Parent):
+    
+     def override(self):
+         print ("CHILD override()")
+        
+ dad = Parent()
+ son = Child()
+
+ dad.override()
+ son.override()
+
+	
+class Parent (object):
+    def altered(self):
+        print ("PARENT altered()")
+
+class Child(Parent):
+    
+    def altered(self):
+        print ("CHILD, BEFORE PARENT altered")
+        super(Child, self).altered()
+        print("CHILD, AFTER PARENT altered()")
+        
+dad = Parent()
+son = Child()
+
+#dad.altered()
+son.altered()
 	
 	
 	
